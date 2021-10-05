@@ -7,7 +7,9 @@ dotenv.config({ path: path.join(__dirname, '../../.env') });
 const envVarsSchema = Joi.object()
   .keys({
     PORT: Joi.number().default(3000),
-    NODE_ENV: Joi.string().valid('production', 'development', 'test').required()
+    NODE_ENV: Joi.string().valid('production', 'development', 'test').required(),
+    GOOGLE_CLIENT_ID: Joi.string().required().description('Google Client ID'),
+    GOOGLE_CLIENT_SECRET: Joi.string().required().description('Google Client Secret')
   })
   .unknown();
 
@@ -19,5 +21,7 @@ if (error) {
 
 module.exports = {
   port: envVars.PORT,
-  env: envVars.NODE_ENV
+  env: envVars.NODE_ENV,
+  clientId: envVars.GOOGLE_CLIENT_ID,
+  secret: envVars.GOOGLE_CLIENT_SECRET
 };
