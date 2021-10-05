@@ -31,13 +31,14 @@ passport.serializeUser(function(user, cb) {
 passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
-
 /**
  * OAuth Business Logic
  */
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const logger = require('./config/logger');
+
 const GOOGLE_CLIENT_ID = config.clientId;
-const GOOGLE_CLIENT_SECRET = config.clientId;
+const GOOGLE_CLIENT_SECRET = config.secret;
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
