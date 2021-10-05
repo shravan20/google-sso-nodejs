@@ -1,12 +1,17 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const morgan = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
 const config = require('./config/envConfig');
 var userProfile;
 
 app.set('view engine', 'ejs');
+
+morgan.token('timed', 'A new :method request for :url was received. It took :total-time[2] milliseconds to be resolved');
+app.use(morgan('timed'));
+app.use(morgan('dev'));
 
 app.use(session({
     resave: false,
