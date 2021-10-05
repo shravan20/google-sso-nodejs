@@ -9,7 +9,8 @@ const envVarsSchema = Joi.object()
     PORT: Joi.number().default(3000),
     NODE_ENV: Joi.string().valid('production', 'development', 'test').required(),
     GOOGLE_CLIENT_ID: Joi.string().required().description('Google Client ID'),
-    GOOGLE_CLIENT_SECRET: Joi.string().required().description('Google Client Secret')
+    GOOGLE_CLIENT_SECRET: Joi.string().required().description('Google Client Secret'),
+    GOOGLE_CALLBACK_URL: Joi.string().required().description('Google Callback Url')
   })
   .unknown();
 
@@ -23,5 +24,6 @@ module.exports = {
   port: envVars.PORT,
   env: envVars.NODE_ENV,
   clientId: envVars.GOOGLE_CLIENT_ID,
-  secret: envVars.GOOGLE_CLIENT_SECRET
+  secret: envVars.GOOGLE_CLIENT_SECRET,
+  callbackUrl: envVars.GOOGLE_CALLBACK_URL
 };
