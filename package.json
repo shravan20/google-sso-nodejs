@@ -1,0 +1,30 @@
+{
+  "name": "google-sso-nodejs",
+  "version": "1.0.0",
+  "description": "Node Community",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "prod": "pm2 start server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-personal:shravan20/google-sso-nodejs.git"
+  },
+  "author": "Node Community [Sriram C, Chinmayi BM, Prachi T, Shravan KB]",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.0.0",
+    "pm2": "^5.1.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
