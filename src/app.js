@@ -63,7 +63,9 @@ app.get('/auth/google/callback',
   function(req, res) {
     // Successful authentication, redirect success.
     res.redirect('/success');
-  });
+  }); 
+
+  
   
 
 // parse json request body
