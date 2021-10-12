@@ -15,6 +15,7 @@
   "author": "Node Community [Sriram C, Chinmayi BM, Prachi T, Shravan KB]",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.7.2",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
